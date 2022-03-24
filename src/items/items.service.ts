@@ -16,7 +16,6 @@ export class ItemsService {
         return this.itemModel.find();
     }
 
-    //because mongoose returns a promise so its async
     async findById(id: string): Promise<Item> {
         return this.itemModel.findOne({ _id: id })
     }
@@ -28,16 +27,12 @@ export class ItemsService {
     }
 
     async deleteItem(id: string): Promise<Item> {
-        return await this.itemModel.findByIdAndRemove({_id: id})
+        return await this.itemModel.findByIdAndRemove(id)
     }
 
     async updateItem(id: string, item :Item): Promise<Item> {
         return await this.itemModel.findByIdAndUpdate(id, item, {new:true})
     }
-
-
-
-
 
     // deleteById(id: string){
     //     return this.itemsList.find(item => item.id !== id)

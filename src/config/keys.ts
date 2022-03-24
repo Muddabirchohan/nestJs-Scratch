@@ -1,3 +1,4 @@
 export default {
-    mongoURI: "mongodb://localhost:27017/nest"
+    mongoURI: "mongodb://localhost:27017/nest",
+    secret: 'secretKey',
 }
